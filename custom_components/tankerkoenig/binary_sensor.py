@@ -8,7 +8,7 @@ import logging
 from datetime import timedelta
 
 from . import TankerkoenigDevice, CONF_STATIONS
-from homeassistant.components.binary_sensor import BinarySensorDevice
+from homeassistant.components.binary_sensor import BinarySensorEntity
 from homeassistant.const import CONF_NAME
 from homeassistant.util import slugify
 
@@ -34,7 +34,7 @@ def setup_platform(hass, config, add_entities, discovery_info=None):
     add_entities(sensors)
 
 
-class TankerkoenigBinarySensor(TankerkoenigDevice, BinarySensorDevice):
+class TankerkoenigBinarySensor(TankerkoenigDevice, BinarySensorEntity):
     """Implement an Tankerkoenig binary_sensor for displaying stations status."""
 
     def __init__(self, hass, station_config, config):
